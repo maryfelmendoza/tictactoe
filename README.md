@@ -1,7 +1,7 @@
 # Tic Tac Toe
 
 ## Introduction
-
+Tic-tac-toe is a commonly known game that is played with 'O's and 'X's. To gain a better understanding of Object Oriented Programming, we have developed this game in Ruby.
 
 ## Built With
 [Ruby](https://www.ruby-lang.org/en/)
