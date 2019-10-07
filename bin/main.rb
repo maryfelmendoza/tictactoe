@@ -10,7 +10,11 @@ player2 = gets.chomp
 puts
 puts "Let's play! #{player1} #{player2}"
 puts
-
 game = Game.new(player1, player2)
 
 game.play
+
+
+
+
+
