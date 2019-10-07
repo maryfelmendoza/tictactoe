@@ -68,6 +68,6 @@ class Game
         exit
       end
     end
-    if @winner == nil; puts 'YOU'RE BOTH LOSERS!' end
+    if @winner == nil; puts "YOU'RE BOTH LOSERS!" end
   end
 end
