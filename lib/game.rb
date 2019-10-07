@@ -44,9 +44,13 @@ class Game
 
   def game_over?
     if @player1_played == any of the winning patterns
-    end it here
       puts "YOU WON PLAYER ONE!"
       exit
+    elsif @player2_played == any of the winning patterns
+      puts "YOU WON PLAYER TWO!"
+      exit
+    else
+      self.play
     end
   end
 end
