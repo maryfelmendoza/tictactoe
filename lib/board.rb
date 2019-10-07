@@ -3,7 +3,7 @@ class Board
     # self.create
   end
   
-  def self.create
+  def create
     @arr = []
     # >>> This creates the board and marks every grid with a number 1 - 9
     for i in 1..9

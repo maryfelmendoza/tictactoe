@@ -1,10 +1,10 @@
 
 class Game 
   attr_accessor :board
-  def initialize(player1, player2)
+  def initialize(player1, player2, board)
     @player1 = player1
     @player2 = player2
-    board = Board.new
+    @board = board
   end
   
   def play 

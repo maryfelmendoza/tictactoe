@@ -12,8 +12,9 @@ puts
 puts "Let's play! #{player1} #{player2}"
 puts
 
-game = Game.new(player1, player2)
 board = Board.new
+
+game = Game.new(player1, player2, board)
 
 # board.create
 game.play
