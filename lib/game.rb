@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class Game
   def initialize(player1, player2)
     @player1 = player1
@@ -21,7 +22,6 @@ class Game
       @board_array.push(" [ #{i} ] ").each_slice(3)
     end
     @board_array.each_slice(3) { |x| puts x.join puts }
-
   end
 
   def play
@@ -62,7 +62,7 @@ class Game
   end
 
   def game_over?
-    for i in 0...@winning_combos.length
+    @winning_combos.each do |i|
       if (@winning_combos[i] - @player1_played).empty?
         puts 'YOU WON PLAYER ONE!'
         @winner = @player1
