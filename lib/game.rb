@@ -8,6 +8,7 @@ class Game
     @arr = []
     @display_board
     @current_player = 1
+    @winning_combos= [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
   end
   
   def board
@@ -43,10 +44,10 @@ class Game
   end
 
   def game_over?
-    if @player1_played == any of the winning patterns
+    if @player1_played == @winning_combos[i]
       puts "YOU WON PLAYER ONE!"
       exit
-    elsif @player2_played == any of the winning patterns
+    elsif @player2_played == @winning_combos[i]
       puts "YOU WON PLAYER TWO!"
       exit
     else
