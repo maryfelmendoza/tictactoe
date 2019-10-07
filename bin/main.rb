@@ -1,5 +1,6 @@
 
 require "./lib/board"
+require "./lib/game"
 
 # Set up game
 puts "Welcome!"
