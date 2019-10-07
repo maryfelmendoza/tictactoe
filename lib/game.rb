@@ -1,4 +1,3 @@
-
 class Game 
   def initialize(player1, player2)
     @player1 = player1
@@ -8,10 +7,8 @@ class Game
     @board_array = []
     @box_played = []
     @current_player = 1
-    @winner
-    @winning_combos= [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    @winning_combos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
   end
-  
   def board
     # >>> This creates the board and marks every grid with a number 1 - 9
     for i in 1..9
@@ -19,7 +16,6 @@ class Game
     end
       return @board_array.each_slice(3) { |x| puts x.join puts}
   end
-  
   def play 
     # While nobody has won
     ct = 0
