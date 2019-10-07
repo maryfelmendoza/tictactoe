@@ -13,10 +13,14 @@ class Game
 
   def board
     # >>> This creates the board and marks every grid with a number 1 - 9
-    for i in 1..9
+    # for i in 1..9
+    #   @board_array.push(" [ #{i} ] ").each_slice(3)
+    # end
+    (1..9).each { |i|
       @board_array.push(" [ #{i} ] ").each_slice(3)
-    end
+    }
     @board_array.each_slice(3) { |x| puts x.join puts }
+
   end
 
   def play
