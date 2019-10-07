@@ -9,6 +9,7 @@ class Game
     @box_played = []
     @current_player = 1
     @winning_combos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    @ct = 0
   end
 
   def board
@@ -16,18 +17,17 @@ class Game
     # for i in 1..9
     #   @board_array.push(" [ #{i} ] ").each_slice(3)
     # end
-    (1..9).each { |i|
+    (1..9).each do |i|
       @board_array.push(" [ #{i} ] ").each_slice(3)
-    }
+    end
     @board_array.each_slice(3) { |x| puts x.join puts }
 
   end
 
   def play
     # While nobody has won
-    ct = 0
     board
-    while ct < 9
+    while @ct < 9
       if @current_player == 1
         player_input = @player1_input
         player_played = @player1_played
@@ -43,7 +43,7 @@ class Game
         @current_player = 1
         run(player_input, player_played, player, sym)
       end
-      ct += 1
+      @ct += 1
     end
   end
 
@@ -73,8 +73,6 @@ class Game
         exit
       end
     end
-    if @winner.nil?
-      puts "YOU'RE BOTH LOSERS!" 
-    end
+    puts "YOU'RE BOTH LOSERS" if @winner.nil? && @ct > 7
   end
 end
