@@ -1,4 +1,5 @@
-class Game 
+# frozen_string_literal: true
+class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
@@ -13,12 +14,12 @@ class Game
   def board
     # >>> This creates the board and marks every grid with a number 1 - 9
     for i in 1..9
-      @board_array.push(' [ #{i} ] ').each_slice(3)
+      @board_array.push(" [ #{i} ] ").each_slice(3)
     end
     @board_array.each_slice(3) { |x| puts x.join puts }
   end
 
-  def play 
+  def play
     # While nobody has won
     ct = 0
     board
@@ -43,14 +44,14 @@ class Game
   end
 
   def run(player_input, player_played, player, sym)
-    puts 'Choose a number between 1-9 #{player}'
+    puts "Choose a number between 1-9 #{player}"
     player_input = gets.chomp.to_i
     if @box_played.include? player_input
       puts 'PICK SOMETHING ELSE YOU CHEATER'
     else
       player_played.push(player_input)
       @box_played.push(player_input)
-      @board_array[player_input - 1] = ' [ #{sym} ] '
+      @board_array[player_input - 1] = " [ #{sym} ] "
       puts @board_array.each_slice(3) { |x| puts x.join puts }
       game_over?
     end
@@ -68,6 +69,8 @@ class Game
         exit
       end
     end
-    if @winner == nil; puts "YOU'RE BOTH LOSERS!" end
+    if @winner.nil?
+      puts "YOU'RE BOTH LOSERS!" 
+    end
   end
 end
