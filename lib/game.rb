@@ -2,10 +2,10 @@
 
 class Game
   def initialize(player1, player2)
-    @player1 = player1
-    @player2 = player2
-    @player1_played = []
-    @player2_played = []
+    $player1 = player1
+    $player2 = player2
+    $player1_played = []
+    $player2_played = []
     @board_array = []
     @box_played = []
     @current_player = 1
@@ -29,20 +29,20 @@ class Game
     board
     while @ct < 9
       if @current_player == 1
-        player_input = @player1_input
-        player_played = @player1_played
-        player = @player1
+        player_input = $player1_input
+        player_played = $player1_played
+        player = $player1
         sym = 'X'
         @current_player = 2
-        run(player_input, player_played, player, sym)
+        # run(player_input, player_played, player, sym)
       elsif @current_player == 2
-        player_input = @player2_input
-        player_played = @player2_played
-        player = @player2
+        player_input = $player2_input
+        player_played = $player2_played
+        player = $player2
         sym = 'O'
         @current_player = 1
-        run(player_input, player_played, player, sym)
       end
+      run(player_input, player_played, player, sym)
       @ct += 1
     end
   end
@@ -63,13 +63,13 @@ class Game
 
   def game_over?
     for i in 0...@winning_combos.length
-      if (@winning_combos[i] - @player1_played).empty?
+      if (@winning_combos[i] - $player1_played).empty?
         puts 'YOU WON PLAYER ONE!'
-        @winner = @player1
+        @winner = $player1
         exit
-      elsif (@winning_combos[i] - @player2_played).empty?
+      elsif (@winning_combos[i] - $player2_played).empty?
         puts 'YOU WON PLAYER TWO!'
-        @winner = @player2
+        @winner = $player2
         exit
       end
     end
