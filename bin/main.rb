@@ -1,3 +1,6 @@
+
+require "./lib/board"
+
 # Set up game
 puts "Welcome!"
 puts "Player 1, What is your name?"
