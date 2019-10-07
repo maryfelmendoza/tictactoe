@@ -34,15 +34,15 @@ class Game
         player = @player1
         sym = 'X'
         @current_player = 2
-        # run(player_input, player_played, player, sym)
+        run(player_input, player_played, player, sym)
       elsif @current_player == 2
         player_input = @player2_input
         player_played = @player2_played
         player = @player2
         sym = 'O'
         @current_player = 1
+        run(player_input, player_played, player, sym)
       end
-      run(player_input, player_played, player, sym)
       @ct += 1
     end
   end
@@ -62,13 +62,8 @@ class Game
   end
 
   def game_over?
-<<<<<<< HEAD
     for i in 0...@winning_combos.length
       if (@winning_combos[i] - @player1_played).empty?
-=======
-    (0...@winning_combos.length).each do |i|
-      if (@winning_combos[i] - $player1_played).empty?
->>>>>>> 808e1fe610cbc0533e6c132389be3b15115b4249
         puts 'YOU WON PLAYER ONE!'
         @winner = @player1
         exit
