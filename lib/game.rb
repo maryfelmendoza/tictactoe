@@ -51,7 +51,7 @@ class Game
     end
   end
 
-  def run(player_input, player_played, player, sym)
+  def run(player_input, player_played, _player, sym)
     if @box_played.include? player_input
       puts 'PICK SOMETHING ELSE YOU CHEATER'
     else
