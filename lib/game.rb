@@ -61,6 +61,10 @@ class Game
       puts @board_array.each_slice(3) { |x| puts x.join puts }
       game_over?
     end
+    if @box_played.length == 9 && @winner.nil?
+      puts "YOU'RE BOTH LOSERS"
+      exit
+    end
   end
 
   def game_over?
@@ -75,9 +79,6 @@ class Game
         exit
       end
     end
-    if @box_played.length == 9 && @winner.nil?
-      puts "YOU'RE BOTH LOSERS"
-      exit
-    end
+
   end
 end
