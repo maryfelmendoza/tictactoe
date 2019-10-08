@@ -52,7 +52,7 @@ class Game
   end
 
   def run(player_input, player_played, _player, sym)
-    if (@box_played.include? player_input) && !player_input.nil?
+    if (@box_played.include? player_input) && (!player_input.nil?)
       puts 'PICK SOMETHING ELSE YOU CHEATER'
     else
       player_played.push(player_input)
@@ -60,10 +60,6 @@ class Game
       @board_array[player_input - 1] = " [ #{sym} ] "
       puts @board_array.each_slice(3) { |x| puts x.join puts }
       game_over?
-    end
-    if @box_played.length == 9 && @winner.nil?
-      puts "YOU'RE BOTH LOSERS"
-      exit
     end
   end
 
@@ -78,6 +74,10 @@ class Game
         @winner = @player2
         exit
       end
+    end
+    if @box_played.length == 9 && @winner.nil?
+      puts "YOU'RE BOTH LOSERS"
+      exit
     end
   end
 end
