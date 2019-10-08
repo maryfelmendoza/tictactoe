@@ -29,6 +29,8 @@ class Game
     board
     while @ct < 9
       if @current_player == 1
+        puts "Choose a number between 1-9 #{@player1}"
+        @player1_input = gets.chomp.to_i
         player_input = @player1_input
         player_played = @player1_played
         player = @player1
@@ -36,6 +38,8 @@ class Game
         @current_player = 2
         run(player_input, player_played, player, sym)
       elsif @current_player == 2
+        puts "Choose a number between 1-9 #{@player2}"
+        @player2_input = gets.chomp.to_i
         player_input = @player2_input
         player_played = @player2_played
         player = @player2
@@ -47,9 +51,7 @@ class Game
     end
   end
 
-  def run(player_input, player_played, player, sym)
-    puts "Choose a number between 1-9 #{player}"
-    player_input = gets.chomp.to_i
+  def run(player_input, player_played, _player, sym)
     if @box_played.include? player_input
       puts 'PICK SOMETHING ELSE YOU CHEATER'
     else
@@ -62,7 +64,7 @@ class Game
   end
 
   def game_over?
-    for i in 0...@winning_combos.length
+    (0...@winning_combos.length).each do |i|
       if (@winning_combos[i] - @player1_played).empty?
         puts 'YOU WON PLAYER ONE!'
         @winner = @player1
