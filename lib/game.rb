@@ -52,7 +52,7 @@ class Game
   end
 
   def run(player_input, player_played, _player, sym)
-    if (@box_played.include? player_input) && (!player_input.nil?)
+    if (@box_played.include? player_input) && !player_input.nil?
       puts 'PICK SOMETHING ELSE YOU CHEATER'
     else
       player_played.push(player_input)
