@@ -79,6 +79,5 @@ class Game
         exit
       end
     end
-
   end
 end
