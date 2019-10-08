@@ -64,7 +64,7 @@ class Game
   end
 
   def game_over?
-    for i in 0...@winning_combos.length
+    (0...@winning_combos.length).each do |i|
       if (@winning_combos[i] - @player1_played).empty?
         puts 'YOU WON PLAYER ONE!'
         @winner = @player1
