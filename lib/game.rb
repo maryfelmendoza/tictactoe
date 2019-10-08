@@ -47,12 +47,12 @@ class Game
         @current_player = 1
         run(player_input, player_played, player, sym)
       end
-      @ct += 1
     end
+    @ct += 1
   end
 
   def run(player_input, player_played, player, sym)
-    if @box_played.include? player_input
+    if @box_played.include? player_input && player_input != nil
       puts 'PICK SOMETHING ELSE YOU CHEATER'
     else
       player_played.push(player_input)
@@ -75,6 +75,9 @@ class Game
         exit
       end
     end
-    puts "YOU'RE BOTH LOSERS" if @winner.nil? && @ct > 7
+    if @box_played.length == 9 && @winner.nil?
+      puts "YOU'RE BOTH LOSERS" 
+      exit
+    end
   end
 end
