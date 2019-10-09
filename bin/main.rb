@@ -19,12 +19,16 @@ loop do
   puts "Pick a box to play #{player1}!"
   box = gets.chomp.to_i
   game.play(player1, box)
-  break if game.game_over? == true
+  break if game.game_over[0] == true
   
   puts "It's your turn to pick #{player2}"
   box = gets.chomp.to_i
   game.play(player2, box)
-  break if game.game_over? == true
+  break if game.game_over[0] == true
+end
+
+if game.game_over[0] == true
+  puts "GAME OVER #{game.game_over[1]} WON!"
 end
 
 
