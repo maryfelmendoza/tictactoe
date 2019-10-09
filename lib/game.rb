@@ -42,12 +42,11 @@ class Game
         @announce = "YOU WON #{player.upcase}!!"
         @result = true
         break
-      elsif @box_played.length == 9
+      elsif @box_played.length == 8
         @announce = "IT'S A TIE"
         @result = true
         break
       else 
-        @announce = 'KEEP PLAYING!'
         @result = false
       end
     end
