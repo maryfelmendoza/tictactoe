@@ -28,7 +28,7 @@ loop do
 end
 
 if game.game_over[0] == true
-  puts "GAME OVER #{game.game_over[1]} WON!"
+  puts "GAME OVER #{game.game_over[1]}!"
 end
 
 
