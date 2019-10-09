@@ -15,9 +15,15 @@ puts
 game = Game.new(player1, player2)
 loop do
   loop do
+  begin
     puts
     print "Pick a box to play #{player1}! > "
-    box = gets.chomp.to_i
+    box = gets.chomp
+    box = Integer(box)
+  rescue ArgumentError
+    print "Please put a number"
+    retry
+  end
     if game.cheater?(box) == false
       game.play(player1, box)
       break
