@@ -14,19 +14,18 @@ player1 = "Apple"
 player2 = "Banana"
 
 game = Game.new(player1, player2)
-ct = 0
-while ct < 11
-puts "Pick a box to play #{player1}!"
-box = gets.chomp.to_i
-game.play(player1, box)
 
-puts "It's your turn to pick #{player2}"
-box = gets.chomp.to_i
-game.play(player2, box)
-ct += 1
+loop do
+  puts "Pick a box to play #{player1}!"
+  box = gets.chomp.to_i
+  game.play(player1, box)
+  break if game.game_over? == true
+  
+  puts "It's your turn to pick #{player2}"
+  box = gets.chomp.to_i
+  game.play(player2, box)
+  break if game.game_over? == true
 end
-
-
 
 
 =begin
