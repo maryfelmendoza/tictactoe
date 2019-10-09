@@ -9,10 +9,8 @@ class Game
     @board_array = []
     @box_played = []
     @game_played = []
-    @current_player = 1
-    @count = 0
-    board
     @ans = false
+    board
   end
 
   def board
