@@ -25,13 +25,15 @@ class Game
     box
     if player == @player1
       player_played = @player1_played
+      sym = "X"
     else
       player_played = @player2_played
+      sym = "O"
     end
-    check(player, player_played, box)
+    check(player, player_played, box, sym)
   end
 
-  def check(player, player_played, box)
+  def check(player, player_played, box, sym)
     player_played.push(box)
     puts "Sup #{player}, so far you got #{player_played}"
     @winning_combos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
@@ -46,7 +48,11 @@ class Game
         break
       else 
         puts 'KEEP PLAYING!'
-        @result = false
+        
+          @box_played.push(player_input)
+          @board_array[player_input - 1] = " [ #{sym} ] "
+          puts @board_array.each_slice(3) { |x| puts x.join puts }
+          @result = false
         break
       end
     end
