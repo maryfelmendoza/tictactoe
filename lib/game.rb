@@ -11,8 +11,6 @@ class Game
     @game_played = []
     @current_player = 1
     @count = 0
-    @result
-    @announce
     board
     @ans = false
   end
@@ -21,7 +19,7 @@ class Game
     (1..9).each do |i|
       @board_array.push(" [ #{i} ] ").each_slice(3)
     end
-    @board_array.each_slice(3) { |x| puts x.join puts}
+    @board_array.each_slice(3) { |x| puts x.join puts }
   end
 
   def cheater?(box)
@@ -37,10 +35,10 @@ class Game
   def play(player, box)
     if player == @player1
       player_played = @player1_played
-      sym = "X"
+      sym = 'X'
     else
       player_played = @player2_played
-      sym = "O"
+      sym = 'O'
     end
     check(player, player_played, box, sym)
   end
@@ -57,7 +55,7 @@ class Game
         @announce = "IT'S A TIE"
         @result = true
         break
-      else 
+      else
         @result = false
       end
     end
@@ -65,9 +63,8 @@ class Game
     @board_array[box - 1] = " [ #{sym} ] "
     puts @board_array.each_slice(3) { |x| puts x.join puts }
   end
-  
+
   def game_over
     [@result, @announce]
   end
-
 end

@@ -18,28 +18,28 @@ ct = 0
 loop do
   loop do
     puts
-  print "Pick a box to play #{player1}! > "
-  box = gets.chomp.to_i
-  if game.cheater?(box) == false
-    game.play(player1, box)
-    break
-  else
-    puts "That has been played already!"
+    print "Pick a box to play #{player1}! > "
+    box = gets.chomp.to_i
+    if game.cheater?(box) == false
+      game.play(player1, box)
+      break
+    else
+      puts "That has been played already!"
+    end
   end
-end
-break if game.game_over[0] == true
+  break if game.game_over[0] == true
 
-loop do
-  print "It's your turn to pick #{player2} > "
-  box = gets.chomp.to_i
-  if game.cheater?(box) == false
-    game.play(player2, box)
-    break
-  else
-    puts "That has been played already!"
+  loop do
+    print "It's your turn to pick #{player2} > "
+    box = gets.chomp.to_i
+    if game.cheater?(box) == false
+      game.play(player2, box)
+      break
+    else
+      puts "That has been played already!"
+    end
   end
-  end
-break if game.game_over[0] == true
+  break if game.game_over[0] == true
 end
 
 
