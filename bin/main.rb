@@ -57,5 +57,8 @@ end
   - Win?
   - Tie?
   - Start again?  
+
+ 7. Make sure same box can't be played
+
 =end
 
