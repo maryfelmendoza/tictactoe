@@ -8,22 +8,33 @@ class Game
     @player2_played = []
     @board_array = []
     @box_played = []
+    @game_played = []
     @current_player = 1
     @count = 0
     @result
     @announce
     board
+    @ans = false
   end
 
   def board
     (1..9).each do |i|
       @board_array.push(" [ #{i} ] ").each_slice(3)
     end
-    @board_array.each_slice(3) { |x| puts x.join puts }
+    @board_array.each_slice(3) { |x| puts x.join puts}
+  end
+
+  def cheater?(box)
+    @ans = false
+    if @game_played.any?(box)
+      @ans = true
+    else
+      @game_played.push(box)
+    end
+    @ans
   end
 
   def play(player, box)
-    box
     if player == @player1
       player_played = @player1_played
       sym = "X"
