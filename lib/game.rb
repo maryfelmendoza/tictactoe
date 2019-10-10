@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  def initialize(player1, player2)
+  def initialize(_player1, _player2)
     # @current_player_1 = player1
     # @current_player_2 = player2
     @player1_played = []
@@ -31,7 +31,6 @@ class Game
   end
 
   def play(player, box, current_player)
-
     if current_player == 1
       player_played = @player1_played
       sym = 'X'
