@@ -2,8 +2,8 @@
 
 class Game
   def initialize(player1, player2)
-    @player1 = player1
-    @player2 = player2
+    @current_player_1 = player1
+    @current_player_2 = player2
     @player1_played = []
     @player2_played = []
     @board_array = []
@@ -22,7 +22,7 @@ class Game
 
   def cheater?(box)
     @ans = false
-    if @game_played.any?(box)
+    if @game_played.include?(box)
       @ans = true
     else
       @game_played.push(box)
@@ -30,11 +30,12 @@ class Game
     @ans
   end
 
-  def play(player, box)
-    if player == @player1
+  def play(player, box, current_player)
+
+    if current_player == 1
       player_played = @player1_played
       sym = 'X'
-    else
+    elsif current_player == 2
       player_played = @player2_played
       sym = 'O'
     end
