@@ -2,8 +2,8 @@
 
 class Game
   def initialize(player1, player2)
-    @current_player_1 = player1
-    @current_player_2 = player2
+    # @current_player_1 = player1
+    # @current_player_2 = player2
     @player1_played = []
     @player2_played = []
     @board_array = []
