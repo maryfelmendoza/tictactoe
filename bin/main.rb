@@ -21,7 +21,7 @@ loop do
     box = gets.chomp
     box = Integer(box)
   rescue ArgumentError
-    print "Please put a number"
+    print "Please put a number between 1 - 9"
     retry
   end
     if game.cheater?(box) == false
