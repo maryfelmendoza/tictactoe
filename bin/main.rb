@@ -14,7 +14,7 @@ end
 
 $player1 = name("Player 1")
 $player2 = name("Player 2")
-$game = Game.new
+@game = Game.new
 
 def turns
   current_player = 1
@@ -37,20 +37,20 @@ def turns
         print "Please input a number between 1 and 9"
         puts
       else
-        if $game.cheater?(box) == false
-          $game.play(player, box, n)
+        if @game.cheater?(box) == false
+          @game.play(player, box, n)
           break
         else
           puts "That has been played already!"
         end
       end
-      break if $game.game_over[0] == true
     end
+    break if @game.game_over[0] == true
   end
 end
 
 turns
 
-if $game.game_over[0] == true
-  puts "GAME OVER #{$game.game_over[1]}!"
+if @game.game_over[0] == true
+  puts "GAME OVER #{@game.game_over[1]}!"
 end
