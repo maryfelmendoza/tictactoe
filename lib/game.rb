@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  def initialize(player1, player2)
+  def initialize
     @player1_played = []
     @player2_played = []
     @board_array = []
@@ -29,7 +29,6 @@ class Game
   end
 
   def play(player, box, current_player)
-
     if current_player == 1
       player_played = @player1_played
       sym = 'X'
@@ -62,6 +61,7 @@ class Game
   end
 
   def game_over
+    puts "Entered here"
     [@result, @announce]
   end
 end

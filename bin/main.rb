@@ -12,22 +12,21 @@ def name(player)
   player
 end
 
-current_player = 1
-player1 = name("Player 1")
-player2 = name("Player 2")
-$game = Game.new(player1, player2)
+$player1 = name("Player 1")
+$player2 = name("Player 2")
+$game = Game.new
 
-
-
-def turns(player, n)
-
+def turns
+  current_player = 1
   loop do
-    if current_player == 1
-      player = player1
+    if current_player == 1 
+      n = 1
+      player = $player1
       current_player = 2
-    elsif current_player == 2
-      player = player2
-      current_player == 1
+    else
+      n = 2
+      player = $player2
+      current_player = 1
     end
     loop do
       puts
@@ -45,13 +44,12 @@ def turns(player, n)
           puts "That has been played already!"
         end
       end
+      break if $game.game_over[0] == true
     end
-    break if $game.game_over[0] == true
   end
 end
 
-
-
+turns
 
 if $game.game_over[0] == true
   puts "GAME OVER #{$game.game_over[1]}!"
