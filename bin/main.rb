@@ -1,18 +1,19 @@
 require_relative  '../lib/game.rb'
-require_relative '../lib/player.rb'
 
 puts
 puts "*" * 27
 puts "  WELCOME TO TIC-TAC-TOE!"
 puts "*" * 27
 puts
-print "Player 1, What is your name?: "
-player1 = gets.chomp.capitalize
-print "Now, Player 2, What is your name?: "
-player2 = gets.chomp.capitalize
-puts
-puts "Let's play! #{player1} and #{player2}!!"
-puts
+
+def name(player)
+  print "#{player}, What is your name?: "
+  player = gets.chomp.capitalize
+  player
+end
+
+player1 = name("Player 1")
+player2 = name("Player 2")
 
 game = Game.new(player1, player2)
 loop do
