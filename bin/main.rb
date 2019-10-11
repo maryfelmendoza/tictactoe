@@ -7,8 +7,12 @@ puts "*" * 27
 puts
 
 def name(player)
-  print "#{player}, What is your name?: "
-  player = gets.chomp.capitalize
+  loop do
+    print "#{player}, What is your name?: "
+    player = gets.chomp.capitalize
+  break if !player.empty? 
+    puts "You gotta give us a name buddy"
+  end
   player
 end
 
@@ -16,7 +20,6 @@ $player1 = name("Player 1")
 $player2 = name("Player 2")
 @game = Game.new
 
-def turns
   current_player = 1
   loop do
     if current_player == 1 
@@ -47,9 +50,6 @@ def turns
     end
     break if @game.game_over[0] == true
   end
-end
-
-turns
 
 if @game.game_over[0] == true
   puts "GAME OVER #{@game.game_over[1]}!"
