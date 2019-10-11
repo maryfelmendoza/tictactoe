@@ -5,7 +5,6 @@ puts "*" * 27
 puts "  WELCOME TO TIC-TAC-TOE!"
 puts "*" * 27
 puts
-current_player = 1
 
 def name(player)
   print "#{player}, What is your name?: "
@@ -13,8 +12,23 @@ def name(player)
   player
 end
 
+current_player = 1
+player1 = name("Player 1")
+player2 = name("Player 2")
+$game = Game.new(player1, player2)
+
+
+
 def turns(player, n)
+
   loop do
+    if current_player == 1
+      player = player1
+      current_player = 2
+    elsif current_player == 2
+      player = player2
+      current_player == 1
+    end
     loop do
       puts
       print "Pick a box to play #{player}! > "
@@ -36,19 +50,8 @@ def turns(player, n)
   end
 end
 
-player1 = name("Player 1")
-player2 = name("Player 2")
-$game = Game.new(player1, player2)
 
-if current_player == 1
-  puts "STILL IN PLAYER 1"
-  current_player = 2
-  turns(player1, 1)
-elsif current_player == 2
-  puts "SWITCHED"
-  current_player = 1
-  turns(player2, 2)
-end
+
 
 if $game.game_over[0] == true
   puts "GAME OVER #{$game.game_over[1]}!"
