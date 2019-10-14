@@ -1,23 +1,20 @@
 # frozen_string_literal: true
 
 class Game
-  def initialize(_player1, _player2)
-    # @current_player_1 = player1
-    # @current_player_2 = player2
+  def initialize
     @player1_played = []
     @player2_played = []
     @board_array = []
     @box_played = []
     @game_played = []
     @ans = false
-    board
   end
 
   def board
     (1..9).each do |i|
       @board_array.push(" [ #{i} ] ").each_slice(3)
     end
-    @board_array.each_slice(3) { |x| puts x.join puts }
+    @board_array
   end
 
   def cheater?(box)
@@ -59,7 +56,10 @@ class Game
     end
     @box_played.push(box)
     @board_array[box - 1] = " [ #{sym} ] "
-    puts @board_array.each_slice(3) { |x| puts x.join puts }
+  end
+
+  def display_board
+    @board_array
   end
 
   def game_over
