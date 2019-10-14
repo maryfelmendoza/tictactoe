@@ -6,6 +6,9 @@ puts "  WELCOME TO TIC-TAC-TOE!"
 puts "*" * 27
 puts
 
+@game = Game.new
+puts @game.board.each_slice(3) { |x| puts x.join puts }
+
 def name(player)
   loop do
     print "#{player}, What is your name?: "
@@ -18,8 +21,6 @@ end
 
 $player1 = name("Player 1")
 $player2 = name("Player 2")
-@game = Game.new
-
   current_player = 1
   loop do
     if current_player == 1 
@@ -48,6 +49,7 @@ $player2 = name("Player 2")
         end
       end
     end
+    puts @game.display_board.each_slice(3) { |x| puts x.join puts }          
     break if @game.game_over[0] == true
   end
 

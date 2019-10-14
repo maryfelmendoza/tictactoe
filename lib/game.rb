@@ -8,14 +8,13 @@ class Game
     @box_played = []
     @game_played = []
     @ans = false
-    board
   end
 
   def board
     (1..9).each do |i|
       @board_array.push(" [ #{i} ] ").each_slice(3)
     end
-    @board_array.each_slice(3) { |x| puts x.join puts }
+    @board_array
   end
 
   def cheater?(box)
@@ -57,7 +56,10 @@ class Game
     end
     @box_played.push(box)
     @board_array[box - 1] = " [ #{sym} ] "
-    puts @board_array.each_slice(3) { |x| puts x.join puts }
+  end
+
+  def display_board
+    @board_array
   end
 
   def game_over
