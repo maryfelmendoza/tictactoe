@@ -47,7 +47,6 @@ class Game
     end
     win_diagonals(board).each do |win_diagonal|
       next unless win_diagonal.all?(X_SYM) || win_diagonal.all?(O_SYM)
-      
       winner = win_diagonal
     end
     winner
