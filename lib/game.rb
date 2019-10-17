@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Game
-  
   attr_reader :player1, :player2
 
   def initialize(player1, player2)
@@ -33,20 +32,20 @@ class Game
 
   def combos(board)
     winner = false
-    win_rows(board).each do |win_row|
-      next unless win_row.all?(:X) || win_row.all?(:O)
+    win_rows(board).each do |row|
+      next unless row.all?(:X) || row.all?(:O)
 
-      winner = win_row
+      winner = row
     end
-    win_columns(board).each do |win_col|
-      next unless win_col.all?(:X) || win_col.all?(:O)
+    win_columns(board).each do |col|
+      next unless col.all?(:X) || col.all?(:O)
 
-      winner = win_col
+      winner = col
     end
-    win_diagonals(board).each do |win_diagonal|
-      next unless win_diagonal.all?(:X) || win_diagonal.all?(:O)
+    win_diagonals(board).each do |dia|
+      next unless dia.all?(:X) || dia.all?(:O)
 
-      winner = win_diagonal
+      winner = dia
     end
     winner
   end

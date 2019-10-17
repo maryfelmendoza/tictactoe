@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class Board
-  
   attr_reader :board
 
   def initialize
