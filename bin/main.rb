@@ -70,7 +70,7 @@ while count < 9
       puts
       puts game.player_2.to_s.capitalize + ' You are the winner'
       break
-  elsif time == 9
+  elsif count == 9
       puts
       puts 'It\'s a tie'
   end

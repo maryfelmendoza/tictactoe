@@ -16,17 +16,20 @@ class Game
     win_row1 = [board[0], board[1], board[2]] 
     win_row2 = [board[3], board[4], board[5]]
     win_row3 = [board[6], board[7], board[8]]
+    [win_row1, win_row2, win_row3]
   end
 
   def win_columns(board)
     win_col1 = [board[0], board[3], board[6]] 
     win_col2 = [board[1], board[4], board[7]]
     win_col3 = [board[2], board[5], board[8]]
+    [win_col1, win_col2, win_col3]
   end
 
   def win_diagonals(board)
     win_diagonal1 = [board[0], board[4], board[8]] 
     win_diagonal2 = [board[2], board[4], board[6]]
+    [win_diagonal1, win_diagonal2]
   end
 
   def combos(board)
