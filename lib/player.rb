@@ -6,6 +6,5 @@ class Player
   def initialize(name, player_number)
     @name = name
     @player_number = player_number
-    
   end
 end

@@ -18,10 +18,10 @@ name_2 = gets.chomp
 
 #initialization
 
-player_1 = Player.new(name_1, 1)
-player_2 = Player.new(name_2, 2)
+player1 = Player.new(name_1, 1)
+player2 = Player.new(name_2, 2)
 board = Board.new
-game = Game.new(player_1.name, player_2.name)
+game = Game.new(player1.name, player2.name)
 
 
 #game
@@ -39,7 +39,7 @@ while count < 9
     puts 'Choose the number on which to place your move'
     move_player1 = gets.chomp
 
-    if board.set_index(move_player1.to_i, player_1.player_number)
+    if board.set_index(move_player1.to_i, player1.player_number)
       puts 'The movement is on board'
       count += 1
     else
@@ -51,7 +51,7 @@ while count < 9
     puts 'Choose the number on which to place your move'
     move_player2 = gets.chomp
 
-    if board.set_index(move_player2.to_i, player_2.player_number)
+    if board.set_index(move_player2.to_i, player2.player_number)
       puts 'The movement is on board'
       count += 1
     else
@@ -64,11 +64,11 @@ while count < 9
     
   if win_hash == 1
       puts
-      puts game.player_1.to_s.capitalize + ' You are the winner'
+      puts game.player1.to_s.capitalize + ' You are the winner'
       break
   elsif win_hash == 2
       puts
-      puts game.player_2.to_s.capitalize + ' You are the winner'
+      puts game.player2.to_s.capitalize + ' You are the winner'
       break
   elsif count == 9
       puts

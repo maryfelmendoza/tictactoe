@@ -4,11 +4,11 @@ class Game
   X_SYM = :X
   O_SYM = :O
 
-  attr_reader :player_1, :player_2
+  attr_reader :player1, :player2
 
-  def initialize(player_1, player_2)
-    @player_1 = player_1
-    @player_2 = player_2
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
   private
@@ -50,6 +50,7 @@ class Game
 
     win_diagonals(board).each do |win_diagonal|
       next unless win_diagonal.all?(X_SYM) || win_diagonal.all?(O_SYM)
+
       winner = win_diagonal
     end
 
