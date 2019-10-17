@@ -3,11 +3,11 @@ class Game
   X_SYM = :X
   O_SYM = :O
 
-  attr_reader :player1, :player2
+  attr_reader :player_1, :player_2
 
-  def initialize
-    @player1 = player1
-    @player2 = player2
+  def initialize(player_1, player_2)
+    @player_1 = player_1
+    @player_2 = player_2
   end
 
   private
@@ -29,22 +29,25 @@ class Game
     win_diagonal2 = [board[2], board[4], board[6]]
   end
 
-  def combos (board)
+  def combos(board)
 
     winner = false
 
     win_rows(board).each do |win_row|
-      next unless win_row.all?(X_SYM) || win_row.all?(O_SYM)    
+      next unless win_row.all?(X_SYM) || win_row.all?(O_SYM)
+
       winner = win_row
     end
 
     win_columns(board).each do |win_col|
-      next unless win_col.all?(X_SYM) || win_col.all?(O_SYM)    
+      next unless win_col.all?(X_SYM) || win_col.all?(O_SYM)
+
       winner = win_col
     end
 
     win_diagonals(board).each do |win_diagonal|
-      next unless win_diagonal.all?(X_SYM) || win_diagonal.all?(O_SYM)    
+      next unless win_diagonal.all?(X_SYM) || win_diagonal.all?(O_SYM)
+         
       winner = win_diagonal
     end
 
