@@ -11,10 +11,14 @@ puts @game.board.each_slice(3) { |x| puts x.join puts }
 
 def name(player)
   loop do
-    print "#{player}, What is your name?: "
-    player = gets.chomp.capitalize
-  break if !player.empty? 
-    puts "You gotta give us a name buddy"
+  begin
+    puts
+    print "Pick a box to play #{player1}! > "
+    box = gets.chomp
+    box = Integer(box)
+  rescue ArgumentError
+    print "Please put a number between 1 - 9"
+    retry
   end
   player
 end
