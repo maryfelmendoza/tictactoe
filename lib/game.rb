@@ -35,26 +35,25 @@ class Game
       player_played = @player2_played
       sym = 'O'
     end
+    player_played.push(box)
+    @box_played.push(box)
     check(player, player_played, box, sym)
   end
 
   def check(player, player_played, box, sym)
-    player_played.push(box)
-    @winning_combos = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9], [1, 5, 9], [3, 5, 7]]
+    @winning_combos = [[1, 5, 9], [3, 5, 7], [1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
     (0...@winning_combos.length).each do |i|
       if (@winning_combos[i] - player_played).empty?
         @announce = "YOU WON #{player.upcase}!!"
         @result = true
         break
-      elsif @box_played.length == 8
+      elsif @box_played.length == 9 && (@winning_combos[i] - player_played).size.positive?
         @announce = "IT'S A TIE"
         @result = true
-        break
       else
         @result = false
       end
     end
-    @box_played.push(box)
     @board_array[box - 1] = " [ #{sym} ] "
   end
 
