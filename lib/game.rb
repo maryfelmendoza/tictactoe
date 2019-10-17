@@ -35,25 +35,18 @@ class Game
 
   def combos(board)
     winner = false
-
     win_rows(board).each do |win_row|
       next unless win_row.all?(X_SYM) || win_row.all?(O_SYM)
-
       winner = win_row
     end
-
     win_columns(board).each do |win_col|
       next unless win_col.all?(X_SYM) || win_col.all?(O_SYM)
-
       winner = win_col
     end
-
     win_diagonals(board).each do |win_diagonal|
       next unless win_diagonal.all?(X_SYM) || win_diagonal.all?(O_SYM)
-
       winner = win_diagonal
     end
-
     winner
   end
 
