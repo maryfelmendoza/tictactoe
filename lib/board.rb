@@ -38,11 +38,8 @@ class Board
   end
 
   def set_index(index, player)
-    
     index -= 1
-    
     if valid_element(index)
-      
       if check_index(index)
         @board[index] = player == 1 ? X_SYM : O_SYM
         true
@@ -55,7 +52,5 @@ class Board
       false
 
     end
-    
   end
-
 end
