@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Board
-  X_SYM = :X
-  O_SYM = :O
-
+  
   attr_reader :board
 
   def initialize
@@ -13,7 +11,7 @@ class Board
   private
 
   def check_index(index)
-    if @board[index] == X_SYM || @board[index] == O_SYM
+    if @board[index] == :X || @board[index] == :O
       false
     else
       true
@@ -41,7 +39,7 @@ class Board
     index -= 1
     if valid_element(index)
       if check_index(index)
-        @board[index] = player == 1 ? X_SYM : O_SYM
+        @board[index] = player == 1 ? :X : :O
         true
       else
         false

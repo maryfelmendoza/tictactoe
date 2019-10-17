@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
 class Game
-  X_SYM = :X
-  O_SYM = :O
-
+  
   attr_reader :player1, :player2
 
   def initialize(player1, player2)
@@ -36,17 +34,17 @@ class Game
   def combos(board)
     winner = false
     win_rows(board).each do |win_row|
-      next unless win_row.all?(X_SYM) || win_row.all?(O_SYM)
+      next unless win_row.all?(:X) || win_row.all?(:O)
 
       winner = win_row
     end
     win_columns(board).each do |win_col|
-      next unless win_col.all?(X_SYM) || win_col.all?(O_SYM)
+      next unless win_col.all?(:X) || win_col.all?(:O)
 
       winner = win_col
     end
     win_diagonals(board).each do |win_diagonal|
-      next unless win_diagonal.all?(X_SYM) || win_diagonal.all?(O_SYM)
+      next unless win_diagonal.all?(:X) || win_diagonal.all?(:O)
 
       winner = win_diagonal
     end
@@ -59,9 +57,9 @@ class Game
     arr = [1]
     arr = combos(board) if combos(board)
 
-    if arr.all?(X_SYM)
+    if arr.all?(:X)
       1
-    elsif arr.all?(O_SYM)
+    elsif arr.all?(:O)
       2
     end
   end
