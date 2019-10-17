@@ -36,26 +36,26 @@ while count < 9
 
   if count.even?
 
-    puts 'Choose the number on which to place your move'
+    puts 'Choose the number where you want to place your move'
     move_player1 = gets.chomp
 
     if board.set_index(move_player1.to_i, player1.player_number)
-      puts 'The movement is on board'
+      puts 'Good move!'
       count += 1
     else
-      puts 'Invalid position, try again'
+      puts 'Invalid move, try again!'
     end
 
   else
 
-    puts 'Choose the number on which to place your move'
+    puts 'Choose the number where you want to place your move'
     move_player2 = gets.chomp
 
     if board.set_index(move_player2.to_i, player2.player_number)
-      puts 'The movement is on board'
+      puts 'Good move!'
       count += 1
     else
-      puts 'Invalid position, try again'
+      puts 'Invalid move, try again!'
     end
 
   end
