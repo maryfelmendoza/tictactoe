@@ -30,22 +30,22 @@ class Game
     [win_diagonal1, win_diagonal2]
   end
 
-  def combos(board)
+  def combination(board)
     winner = false
-    win_rows(board).each do |row|
-      next unless row.all?(:X) || row.all?(:O)
+    win_rows(board).each do |win_row|
+      next unless win_row.all?(:X) || win_row.all?(:O)
 
-      winner = row
+      winner = win_row
     end
-    win_columns(board).each do |col|
-      next unless col.all?(:X) || col.all?(:O)
+    win_columns(board).each do |win_col|
+      next unless win_col.all?(:X) || win_col.all?(:O)
 
-      winner = col
+      winner = win_col
     end
-    win_diagonals(board).each do |dia|
-      next unless dia.all?(:X) || dia.all?(:O)
+    win_diagonals(board).each do |win_diagonal|
+      next unless win_diagonal.all?(:X) || win_diagonal.all?(:O)
 
-      winner = dia
+      winner = win_diagonal
     end
     winner
   end
