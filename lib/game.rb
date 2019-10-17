@@ -30,7 +30,7 @@ class Game
     [win_diagonal1, win_diagonal2]
   end
 
-  def combination(board)
+  def combos(board)
     winner = false
     win_rows(board).each do |win_row|
       next unless win_row.all?(:X) || win_row.all?(:O)
