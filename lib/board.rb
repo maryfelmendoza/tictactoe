@@ -6,7 +6,7 @@ class Board
   attr_reader :board
 
   def initialize
-    @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    @board = %w[1 2 3 4 5 6 7 8 9]
   end
 
   private
@@ -30,11 +30,12 @@ class Board
   public
 
   def display_board
-    row_1 = " [#{@board[0]}] [#{@board[1]}] [#{@board[2]}] "
-    row_2 = " [#{@board[3]}] [#{@board[4]}] [#{@board[5]}] "
-    row_3 = " [#{@board[6]}] [#{@board[7]}] [#{@board[8]}] "
-
-    row_1 + row_2 + row_3
+    row1 = " #{@board[0]} | #{@board[1]} | #{@board[2]}\n"
+    row2 = " #{@board[3]} | #{@board[4]} | #{@board[5]}\n"
+    row3 = " #{@board[6]} | #{@board[7]} | #{@board[8]}\n"
+    space = "-----------\n"
+        
+    row1 + space + row2 + space + row3
   end
 
   def set_index(index, player)
