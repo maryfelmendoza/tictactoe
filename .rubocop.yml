@@ -15,6 +15,8 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Include: ["app/controllers/*"]
   Max: 30
+Metrics/CyclomaticComplexity:
+  Max: 8
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
