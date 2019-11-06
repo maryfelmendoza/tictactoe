@@ -1,8 +1,6 @@
 linters:
   rubocop:
     display_cop_names: true
-    fixer: true
-    
 files:
   ignore:
     - "bin/*"
@@ -10,6 +8,3 @@ files:
     - "config/*"
     - "Guardfile"
     - "Rakefile"
-    
-fixers:
-    enable: true
